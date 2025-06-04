@@ -190,7 +190,7 @@ const Index = () => {
                 <a href="#pricing" className="btn btn-danger btn-lg px-5 py-3 fw-bold">
                   Subscribe Now
                 </a>
-                <a href="https://wa.me/39644657615" className="btn btn-outline-light btn-lg px-5 py-3">
+                <a href="https://wa.me/+33644657615" className="btn btn-outline-light btn-lg px-5 py-3">
                   Free Trial
                 </a>
               </div>
@@ -377,7 +377,7 @@ const Index = () => {
                         <span className="text-light">24/7 Premium Support</span>
                       </li>
                     </ul>
-                    <a href="https://wa.me/39644657615" className={`btn w-100 btn-lg fw-bold ${planKey === 'legend' ? 'btn-success' : 'btn-outline-danger'}`}>
+                    <a href="https://wa.me/+33644657615" className={`btn w-100 btn-lg fw-bold ${planKey === 'legend' ? 'btn-success' : 'btn-outline-danger'}`}>
                       Subscribe Now
                     </a>
                   </div>
@@ -458,7 +458,7 @@ const Index = () => {
                   <MessageCircle className="text-success mb-3" size={48} />
                   <h4 className="text-white mb-3">WhatsApp Support</h4>
                   <p className="text-light mb-4">Get instant support and start your free trial</p>
-                  <a href="https://wa.me/39644657615" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-lg fw-bold">
+                  <a href="https://wa.me/+33644657615" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-lg fw-bold">
                     Chat on WhatsApp
                   </a>
                   <p className="text-light mt-2 small">+39 644 657 615</p>
@@ -497,7 +497,7 @@ const Index = () => {
                 Experience entertainment like never before.
               </p>
               <div className="d-flex gap-3">
-                <a href="https://wa.me/39644657615" target="_blank" rel="noopener noreferrer" className="btn btn-success">
+                <a href="https://wa.me/+33644657615" target="_blank" rel="noopener noreferrer" className="btn btn-success">
                   <MessageCircle size={20} />
                 </a>
                 <a href="https://t.me/genuistv" target="_blank" rel="noopener noreferrer" className="btn btn-info">
@@ -519,7 +519,7 @@ const Index = () => {
               <ul className="list-unstyled">
                 <li><a href="#faq" className="text-light text-decoration-none">FAQ</a></li>
                 <li><a href="#contact" className="text-light text-decoration-none">Contact</a></li>
-                <li><a href="https://wa.me/39644657615" className="text-light text-decoration-none">Free Trial</a></li>
+                <li><a href="https://wa.me/+33644657615" className="text-light text-decoration-none">Free Trial</a></li>
                 <li><a href="#" className="text-light text-decoration-none">Setup Guide</a></li>
               </ul>
             </div>
