@@ -97,18 +97,18 @@ const Index = () => {
   ];
 
   const contentProviders = [
-    { name: "UEFA Champions League", category: "Sports" },
-    { name: "La Liga", category: "Sports" },
-    { name: "Premier League", category: "Sports" },
-    { name: "Netflix", category: "Streaming" },
-    { name: "HBO Max", category: "Streaming" },
-    { name: "Amazon Prime", category: "Streaming" },
-    { name: "Disney+", category: "Streaming" },
-    { name: "ESPN", category: "Sports" },
-    { name: "Sky Sports", category: "Sports" },
-    { name: "BBC", category: "News" },
-    { name: "CNN", category: "News" },
-    { name: "Discovery", category: "Documentary" }
+    { name: "UEFA Champions League", category: "Sports", img: "Logo_UEFA_Champions_League.png" },
+    { name: "La Liga", category: "Sports", img: "laliga.webp" },
+    { name: "Premier League", category: "Sports", img: "premier_ligue.png" },
+    { name: "Netflix", category: "Streaming", img: "netflix.png" },
+    { name: "HBO Max", category: "Streaming", img: "hbo_max.png" },
+    { name: "Amazon Prime", category: "Streaming", img: "prime_now.png" },
+    { name: "Disney+", category: "Streaming", img: "diseny+.png" },
+    { name: "ESPN", category: "Sports", img: "espn.png" },
+    { name: "Sky Sports", category: "Sports", img: "sky_sports.png" },
+    { name: "BBC", category: "News", img: "bbc.png" },
+    { name: "CNN", category: "News", img: "cnn.png" },
+    { name: "Discovery", category: "Documentary", img: "discovery.png" }
   ];
 
   const faqs = [
@@ -182,10 +182,10 @@ const Index = () => {
               <h1 className="display-3 fw-bold mb-4 text-gradient">
                 Premium IPTV Experience with <span className="text-danger">GeniusTV</span>
               </h1>
-              <p className="lead mb-4 text-light fs-5">
+              {/* <p className="lead mb-4 text-light fs-5">
                 Stream 30,000+ live channels and 120,000+ movies in stunning 4K quality. 
                 Experience the future of entertainment with anti-freeze technology and 99.9% uptime guarantee.
-              </p>
+              </p> */}
               <div className="d-flex flex-column flex-md-row gap-3 mb-4">
                 <a href="#pricing" className="btn btn-danger btn-lg px-5 py-3 fw-bold">
                   Subscribe Now
@@ -247,10 +247,15 @@ const Index = () => {
             {contentProviders.map((provider, index) => (
               <div key={index} className="col-6 col-md-4 col-lg-3">
                 <div className="card bg-black border-secondary h-100 p-3 text-center">
-                  <div className="card-body d-flex flex-column justify-content-center">
-                    <h6 className="text-white mb-1">{provider.name}</h6>
+                    <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                    <img
+                      src={`/images/providers/${provider.img}`}
+                      alt={provider.name}
+                      style={{ width: 80, height: 80, objectFit: 'contain', marginBottom: 12 }}
+                    />
+                    {/* <span className="text-white mb-1" style={{ fontSize: '12px' }}>{provider.name}</span> */}
                     <small className="text-danger">{provider.category}</small>
-                  </div>
+                    </div>
                 </div>
               </div>
             ))}
@@ -334,11 +339,13 @@ const Index = () => {
             {Object.entries(pricingData[selectedPlan as keyof typeof pricingData].prices).map(([planKey, details], index) => (
               <div key={planKey} className="col-lg-3 col-md-6">
                 <div className={`card h-100 pricing-card ${planKey === 'legend' ? 'border-success popular-plan position-relative' : 'border-secondary'} bg-dark`}>
-                  {planKey === 'legend' && (
-                    <div className="position-absolute top-0 start-50 translate-middle">
-                      <span className="badge bg-success px-3 py-2 fs-6 fw-bold">Best Value</span>
+                  {/* {planKey === 'legend' && (
+                    <div className="position-relative w-100" style={{zIndex: 10 , textAlign: 'end'}}>
+                      <span className="position-absolute badge bg-success px-3 py-2 fs-6 fw-bold" 
+                      style={{position: 'absolute',  right: '0px', zIndex: 10}}
+                      >Best Value</span>
                     </div>
-                  )}
+                  )} */}
                   <div className="card-body p-4 text-center">
                     <h4 className="card-title text-white mb-1">{details.name}</h4>
                     <p className="text-light small mb-3">{details.duration}</p>
