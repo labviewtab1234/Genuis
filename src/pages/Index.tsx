@@ -43,12 +43,12 @@ const Index = () => {
   const features = [
     {
       icon: <Tv className="h-8 w-8" />,
-      title: "30,000+ Live Channels",
+      title: "10,000+ Live Channels",
       description: "Access to premium sports, movies, news, and entertainment channels worldwide"
     },
     {
       icon: <Play className="h-8 w-8" />,
-      title: "120,000+ VOD Content",
+      title: "+10k VOD Content",
       description: "Massive library of movies, TV series, documentaries in multiple languages"
     },
     {
@@ -323,7 +323,7 @@ useEffect(() => {
                 </div>
                 <div className="d-flex align-items-center gap-2">
                   <Users className="text-info" size={20} />
-                  <span>50,000+ Users</span>
+                  <span>+10k Users</span>
                 </div>
               </div>
             </div>
@@ -382,7 +382,7 @@ useEffect(() => {
               <div className="card-body d-flex flex-column justify-content-center">
                 <Plus className="text-danger mx-auto mb-2" size={32} />
                 <h6 className="text-white mb-1">More</h6>
-                <small className="text-danger">30,000+ Channels</small>
+                <small className="text-danger">10,000+ Channels</small>
               </div>
             </div>
           </div>
@@ -452,7 +452,7 @@ useEffect(() => {
                   <button
                     key={planKey}
                     onClick={() => setSelectedPlan(planKey)}
-                    className={`btn px-4 py-2 ${selectedPlan === planKey ? 'btn-danger' : 'btn-outline-danger'}`}
+                    className={`btn px-4 py-2 plan-btn ${selectedPlan === planKey ? 'btn-danger' : 'btn-outline-danger'}`}
                   >
                     {pricingData[planKey as keyof typeof pricingData].name}
                   </button>
@@ -496,7 +496,7 @@ useEffect(() => {
                       </li>
                       <li className="mb-2 d-flex align-items-center">
                         <Check className="text-success me-2 flex-shrink-0" size={16} />
-                        <span className="text-light">120,000+ Movies & Series</span>
+                        <span className="text-light">1,000+ Movies & Series</span>
                       </li>
                       <li className="mb-2 d-flex align-items-center">
                         <Check className="text-success me-2 flex-shrink-0" size={16} />

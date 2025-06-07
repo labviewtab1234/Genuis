@@ -51,6 +51,11 @@ html{
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -299,4 +304,14 @@ html{
 
 ::-webkit-scrollbar-thumb:hover {
   background: #b20710;
+}
+
+
+@media (max-width: 767px) {
+  .plan-btn {
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.95rem !important;
+    min-width: 90px;
+    min-height: 36px;
+  }
 }
