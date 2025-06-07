@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 767px) {
+  .hero-section {
+    background-image: url('/images/providers/slider4_mobile.png'); /* Mets ici ton image mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-position: top;
+    background-size: cover;
+  }
+}

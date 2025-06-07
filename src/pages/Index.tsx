@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Check, Play, Smartphone, Tv, Monitor, Wifi, Shield, Clock, Star, ChevronDown, ChevronUp, MessageCircle, Send, Zap, Globe, Award, Users } from 'lucide-react';
-
+import React, { useState,useEffect } from 'react';
+import { Check, Play, Smartphone, Tv, Monitor, Wifi, Shield, Clock, Star, ChevronDown, ChevronUp, MessageCircle, Send, Zap, Globe, Award, Users, Plus } from 'lucide-react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Menu, X } from 'lucide-react';
 const Index = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<string>('2-connections');
@@ -13,28 +14,28 @@ const Index = () => {
     '1-connection': {
       name: "1 Connection",
       prices: {
-        'starter': { name: 'Starter', price: '€12.99', period: '/month', savings: '', duration: '1 Month' },
-        'pro': { name: 'Pro', price: '€32.99', period: '/3 months', savings: 'Save 15%', duration: '3 Months' },
-        'max': { name: 'Max', price: '€59.99', period: '/6 months', savings: 'Save 23%', duration: '6 Months' },
-        'legend': { name: 'Legend', price: '€99.99', period: '/12 months', savings: 'Save 36% – Best Value', duration: '12 Months' }
+        'starter': { name: 'Starter', price: '20$', period: '/month', savings: '', duration: '1 Month' },
+        'pro': { name: 'Pro', price: '30$', period: '/3 months', savings: 'Save 15%', duration: '3 Months' },
+        'max': { name: 'Max', price: '50$', period: '/6 months', savings: 'Save 23%', duration: '6 Months' },
+        'legend': { name: 'Legend', price: '80$', period: '/12 months', savings: 'Save 36% – Best Value', duration: '12 Months' }
       }
     },
     '2-connections': {
       name: "2 Connections",
       prices: {
-        'starter': { name: 'Starter', price: '€19.99', period: '/month', savings: '', duration: '1 Month' },
-        'pro': { name: 'Pro', price: '€49.99', period: '/3 months', savings: 'Save 17%', duration: '3 Months' },
-        'max': { name: 'Max', price: '€89.99', period: '/6 months', savings: 'Save 25%', duration: '6 Months' },
-        'legend': { name: 'Legend', price: '€149.99', period: '/12 months', savings: 'Save 38% – Best Value', duration: '12 Months' }
+        'starter': { name: 'Starter', price: '30$', period: '/month', savings: '', duration: '1 Month' },
+        'pro': { name: 'Pro', price: '50$', period: '/3 months', savings: 'Save 17%', duration: '3 Months' },
+        'max': { name: 'Max', price: '85$', period: '/6 months', savings: 'Save 25%', duration: '6 Months' },
+        'legend': { name: 'Legend', price: '130$', period: '/12 months', savings: 'Save 38% – Best Value', duration: '12 Months' }
       }
     },
     '3-connections': {
       name: "3 Connections",
       prices: {
-        'starter': { name: 'Starter', price: '€24.99', period: '/month', savings: '', duration: '1 Month' },
-        'pro': { name: 'Pro', price: '€64.99', period: '/3 months', savings: 'Save 13%', duration: '3 Months' },
-        'max': { name: 'Max', price: '€119.99', period: '/6 months', savings: 'Save 20%', duration: '6 Months' },
-        'legend': { name: 'Legend', price: '€199.99', period: '/12 months', savings: 'Save 33% – Best Value', duration: '12 Months' }
+        'starter': { name: 'Starter', price: '40$', period: '/month', savings: '', duration: '1 Month' },
+        'pro': { name: 'Pro', price: '75$', period: '/3 months', savings: 'Save 13%', duration: '3 Months' },
+        'max': { name: 'Max', price: '120$', period: '/6 months', savings: 'Save 20%', duration: '6 Months' },
+        'legend': { name: 'Legend', price: '180$', period: '/12 months', savings: 'Save 33% – Best Value', duration: '12 Months' }
       }
     }
   };
@@ -134,10 +135,33 @@ const Index = () => {
     }
   ];
 
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+let isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+useEffect(() => {
+  const handleResize = () => {
+    isMobile = window.innerWidth < 768;
+  };
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-danger">
+      {/* <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-danger">
         <div className="container">
           <a className="navbar-brand fw-bold fs-2" href="#" style={{color: '#e50914'}}>
             <span className="text-white">Genius</span><span className="text-danger">TV</span>
@@ -168,18 +192,112 @@ const Index = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
+    <nav className="fixed top-0 left-0 right-0 bg-black border-b border-red-600 z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <a href="#" className="text-2xl font-bold">
+            <span className="text-white">Genius</span>
+            <span className="text-red-600">TV</span>
+          </a>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#features" className="text-white hover:text-red-600 transition-colors">Features</a>
+            <a href="#content" className="text-white hover:text-red-600 transition-colors">Content</a>
+            <a href="#pricing" className="text-white hover:text-red-600 transition-colors">Pricing</a>
+            <a href="#devices" className="text-white hover:text-red-600 transition-colors">Devices</a>
+            <a href="#faq" className="text-white hover:text-red-600 transition-colors">FAQ</a>
+            <a href="#contact" className="text-white hover:text-red-600 transition-colors">Contact</a>
+          </div>
+
+          {/* Mobile toggle button */}
+          <button 
+            className="md:hidden p-2 text-white hover:text-red-600 transition-colors"
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-black border-t border-red-600">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <a 
+                href="#features" 
+                className="block px-3 py-2 text-white hover:text-red-600 hover:bg-gray-900 transition-colors"
+                onClick={closeMenu}
+              >
+                Features
+              </a>
+              <a 
+                href="#content" 
+                className="block px-3 py-2 text-white hover:text-red-600 hover:bg-gray-900 transition-colors"
+                onClick={closeMenu}
+              >
+                Content
+              </a>
+              <a 
+                href="#pricing" 
+                className="block px-3 py-2 text-white hover:text-red-600 hover:bg-gray-900 transition-colors"
+                onClick={closeMenu}
+              >
+                Pricing
+              </a>
+              <a 
+                href="#devices" 
+                className="block px-3 py-2 text-white hover:text-red-600 hover:bg-gray-900 transition-colors"
+                onClick={closeMenu}
+              >
+                Devices
+              </a>
+              <a 
+                href="#faq" 
+                className="block px-3 py-2 text-white hover:text-red-600 hover:bg-gray-900 transition-colors"
+                onClick={closeMenu}
+              >
+                FAQ
+              </a>
+              <a 
+                href="#contact" 
+                className="block px-3 py-2 text-white hover:text-red-600 hover:bg-gray-900 transition-colors"
+                onClick={closeMenu}
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
       {/* Hero Section */}
-      <section className="hero-section min-vh-100 d-flex align-items-center position-relative">
-        <div className="hero-overlay position-absolute w-100 h-100" style={{
-          background: 'linear-gradient(45deg, rgba(0,0,0,0.8), rgba(229,9,20,0.3))',
+      
+      <section
+        className="hero-section min-vh-100 d-flex align-items-center position-relative"
+        style={
+          {
+            backgroundImage: isMobile
+      ? "url('/images/providers/background_mobile.png')"
+      : "url('/images/providers/slider4_optimized.png')",
+          backgroundSize: 'cover',
+           backgroundPosition: isMobile ? 'top' : 'center',
+          backgroundRepeat: 'no-repeat'
+          }
+        }
+      >
+        {/* <div className="hero-overlay position-absolute w-100 h-100" style={{
+          background: 'linear-gradient(45deg, rgba(0,0,0,0.8), rgba(248, 18, 30, 0.3))',
           zIndex: 1
-        }}></div>
+        }}></div> */}
         <div className="container position-relative" style={{zIndex: 2, paddingTop: '100px'}}>
           <div className="row align-items-center">
             <div className="col-lg-6">
-              <h1 className="display-3 fw-bold mb-4 text-gradient">
+              <h1 className="display-3 fw-bold mb-4 text-gradient ">
                 Premium IPTV Experience with <span className="text-danger">GeniusTV</span>
               </h1>
               {/* <p className="lead mb-4 text-light fs-5">
@@ -211,7 +329,7 @@ const Index = () => {
             </div>
             <div className="col-lg-6 text-center">
               <div className="hero-image-container position-relative">
-                <div className="streaming-preview bg-dark rounded-4 p-4 shadow-lg border border-danger">
+                {/* <div className="streaming-preview bg-dark rounded-4 p-4 shadow-lg border border-danger">
                   <div className="d-flex align-items-center justify-content-between mb-3">
                     <div className="d-flex gap-2">
                       <div className="bg-danger rounded-circle" style={{width: '12px', height: '12px'}}></div>
@@ -229,7 +347,7 @@ const Index = () => {
                     <span>Premium Sports HD</span>
                     <span>4K Quality</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -251,14 +369,23 @@ const Index = () => {
                     <img
                       src={`/images/providers/${provider.img}`}
                       alt={provider.name}
-                      style={{ width: 80, height: 80, objectFit: 'contain', marginBottom: 12 }}
+                      style={{ width: 90, height: 90, objectFit: 'contain', marginBottom: 12 }}
                     />
                     {/* <span className="text-white mb-1" style={{ fontSize: '12px' }}>{provider.name}</span> */}
-                    <small className="text-danger">{provider.category}</small>
+                    {/* <small className="text-danger">{provider.category}</small> */}
                     </div>
                 </div>
               </div>
             ))}
+                      <div className="col-6 col-md-4 col-lg-3">
+            <div className="card bg-black border-danger h-100 p-3 text-center more-card">
+              <div className="card-body d-flex flex-column justify-content-center">
+                <Plus className="text-danger mx-auto mb-2" size={32} />
+                <h6 className="text-white mb-1">More</h6>
+                <small className="text-danger">30,000+ Channels</small>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </section>
@@ -462,7 +589,7 @@ const Index = () => {
             <div className="col-md-6">
               <div className="card bg-black border-danger h-100">
                 <div className="card-body text-center p-4">
-                  <MessageCircle className="text-success mb-3" size={48} />
+                  <MessageCircle className="text-success mb-3 m-auto" style={{marginInline: "auto"}} size={48} />
                   <h4 className="text-white mb-3">WhatsApp Support</h4>
                   <p className="text-light mb-4">Get instant support and start your free trial</p>
                   <a href="https://wa.me/+33644657615" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-lg fw-bold">
@@ -475,8 +602,8 @@ const Index = () => {
             <div className="col-md-6">
               <div className="card bg-black border-danger h-100">
                 <div className="card-body text-center p-4">
-                  <Send className="text-info mb-3" size={48} />
-                  <h4 className="text-white mb-3">Telegram Support</h4>
+                  <Send className="text-info mb-3 m-auto" size={48} />
+                  <h4 className="text-white mb-3 " >Telegram Support</h4>
                   <p className="text-light mb-4">Connect with us for quick assistance</p>
                   <a href="https://t.me/genuistv" target="_blank" rel="noopener noreferrer" className="btn btn-info btn-lg fw-bold">
                     Message on Telegram

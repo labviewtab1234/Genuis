@@ -6,6 +6,9 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+html{
+  scroll : smooth;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -222,6 +225,10 @@
 
 .accordion-button:focus {
   box-shadow: 0 0 0 0.25rem rgba(229, 9, 20, 0.25);
+}
+
+.accordion-button::after {
+  display: none !important;
 }
 
 /* Mobile optimizations */
