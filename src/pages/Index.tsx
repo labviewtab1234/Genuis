@@ -12,7 +12,7 @@ const Index = () => {
 
   const pricingData = {
     '1-connection': {
-      name: "1 Connection",
+      name: "1 Device",
       prices: {
         'starter': { name: 'Starter', price: '20$', period: '/month', savings: '', duration: '1 Month' },
         'pro': { name: 'Pro', price: '30$', period: '/3 months', savings: 'Save 15%', duration: '3 Months' },
@@ -21,7 +21,7 @@ const Index = () => {
       }
     },
     '2-connections': {
-      name: "2 Connections",
+      name: "2 Devices",
       prices: {
         'starter': { name: 'Starter', price: '30$', period: '/month', savings: '', duration: '1 Month' },
         'pro': { name: 'Pro', price: '50$', period: '/3 months', savings: 'Save 17%', duration: '3 Months' },
@@ -30,7 +30,7 @@ const Index = () => {
       }
     },
     '3-connections': {
-      name: "3 Connections",
+      name: "3 Devices",
       prices: {
         'starter': { name: 'Starter', price: '40$', period: '/month', savings: '', duration: '1 Month' },
         'pro': { name: 'Pro', price: '75$', period: '/3 months', savings: 'Save 13%', duration: '3 Months' },
@@ -474,7 +474,7 @@ useEffect(() => {
                     </div>
                   )} */}
                   <div className="card-body p-4 text-center">
-                    <h4 className="card-title text-white mb-1">{details.name}</h4>
+                    <h4 className="card-title text-white mb-1 font-black" style={{}}>{details.name}</h4>
                     <p className="text-light small mb-3">{details.duration}</p>
                     <div className="mb-3">
                       <span className="display-6 fw-bold text-danger">{details.price}</span>

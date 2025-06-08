@@ -310,7 +310,7 @@ html{
 @media (max-width: 767px) {
   .plan-btn {
     padding: 0.25rem 0.75rem !important;
-    font-size: 0.95rem !important;
+    font-size: 0.8rem !important;
     min-width: 90px;
     min-height: 36px;
   }
