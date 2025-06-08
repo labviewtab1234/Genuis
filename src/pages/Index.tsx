@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Menu, X } from 'lucide-react';
 const Index = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [selectedPlan, setSelectedPlan] = useState<string>('2-connections');
+  const [selectedPlan, setSelectedPlan] = useState<string>('1-connection');
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
