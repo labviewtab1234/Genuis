@@ -474,7 +474,7 @@ useEffect(() => {
                     </div>
                   )} */}
                   <div className="card-body p-4 text-center">
-                    <h4 className="card-title text-white mb-1 font-black" style={{}}>{details.name}</h4>
+                    <h4 className="card-title mb-1 font-black" style={{color:'#dc3545', fontSize:'22px' }}>{details.name}</h4>
                     <p className="text-light small mb-3">{details.duration}</p>
                     <div className="mb-3">
                       <span className="display-6 fw-bold text-danger">{details.price}</span>
