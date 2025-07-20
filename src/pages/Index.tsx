@@ -16,17 +16,17 @@ const Index = () => {
       prices: {
         'starter': { name: 'Starter', price: '15$', period: '/month', savings: '', duration: '1 Month' },
         'pro': { name: 'Pro', price: '30$', period: '/3 months', savings: 'Save 15%', duration: '3 Months' },
-        'max': { name: 'Max', price: '45$', period: '/6 months', savings: 'Save 23%', duration: '6 Months' },
-        'legend': { name: 'Legend', price: '60$', period: '/12 months', savings: 'Save 36% – Best Value', duration: '12 Months' }
+        'max': { name: 'Max', price: '50$', period: '/6 months', savings: 'Save 23%', duration: '6 Months' },
+        'legend': { name: 'Legend', price: '80$', period: '/12 months', savings: 'Save 36% – Best Value', duration: '12 Months' }
       }
     },
     '2-connections': {
       name: "2 Devices",
       prices: {
         'starter': { name: 'Starter', price: '25$', period: '/month', savings: '', duration: '1 Month' },
-        'pro': { name: 'Pro', price: '45$', period: '/3 months', savings: 'Save 17%', duration: '3 Months' },
+        'pro': { name: 'Pro', price: '50$', period: '/3 months', savings: 'Save 17%', duration: '3 Months' },
         'max': { name: 'Max', price: '80$', period: '/6 months', savings: 'Save 25%', duration: '6 Months' },
-        'legend': { name: 'Legend', price: '100$', period: '/12 months', savings: 'Save 38% – Best Value', duration: '12 Months' }
+        'legend': { name: 'Legend', price: '140$', period: '/12 months', savings: 'Save 38% – Best Value', duration: '12 Months' }
       }
     },
     '3-connections': {
@@ -34,8 +34,8 @@ const Index = () => {
       prices: {
         'starter': { name: 'Starter', price: '35$', period: '/month', savings: '', duration: '1 Month' },
         'pro': { name: 'Pro', price: '80$', period: '/3 months', savings: 'Save 13%', duration: '3 Months' },
-        'max': { name: 'Max', price: '110$', period: '/6 months', savings: 'Save 20%', duration: '6 Months' },
-        'legend': { name: 'Legend', price: '150$', period: '/12 months', savings: 'Save 33% – Best Value', duration: '12 Months' }
+        'max': { name: 'Max', price: '120$', period: '/6 months', savings: 'Save 20%', duration: '6 Months' },
+        'legend': { name: 'Legend', price: '180$', period: '/12 months', savings: 'Save 33% – Best Value', duration: '12 Months' }
       }
     }
   };
